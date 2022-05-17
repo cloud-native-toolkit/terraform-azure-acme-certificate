@@ -1,11 +1,20 @@
 name: azure-acme-certificate
 type: terraform
-description: Module to provision acme-certificate on azure
+description: Module to provision an ACME certificate for azure
 tags:
-  - tools
-  - devops
+  - azure
+  - certificate
+  - tls
 versions:
   - platforms: []
+    providers:
+      - name: acme
+        source: "vancluever/acme"
     dependencies: []
-    variables: []
+    variables:
+      - name: resource_group_name
+      - name: acme_registration_email
+      - name: acme_api_endpoint
+      - name: domain
+      - name: wildcard_domain
 cloudProvider: azure
