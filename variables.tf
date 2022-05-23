@@ -1,6 +1,6 @@
 variable "resource_group_name" {
   type        = string
-  description = "Resource Group where your public DNS zone is deployed"
+  description = "Resource Group where the public DNS zone is deployed"
 }
 
 variable "acme_registration_email" {

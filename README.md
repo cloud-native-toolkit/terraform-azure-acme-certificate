@@ -25,9 +25,7 @@ The module depends on no software components.
 
 ### Module dependencies
 
-This module makes use of the output from other modules:
-
-- Azure DNS - TBD
+This module makes use of other modules.
 
 ### Example usage
 

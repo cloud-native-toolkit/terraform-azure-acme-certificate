@@ -11,10 +11,5 @@ versions:
       - name: acme
         source: "vancluever/acme"
     dependencies: []
-    variables:
-      - name: resource_group_name
-      - name: acme_registration_email
-      - name: acme_api_endpoint
-      - name: domain
-      - name: wildcard_domain
+    variables: []
 cloudProvider: azure
