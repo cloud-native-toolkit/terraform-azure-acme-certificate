@@ -1,11 +1,13 @@
 variable "resource_group_name" {
   type        = string
   description = "Resource Group where the public DNS zone is deployed"
+  default     = "ocp-ipi-rg"
 }
 
 variable "acme_registration_email" {
   type        = string
   description = "Email address used to register with letsencrypt"
+  default     = "noe.samaille@ibm.com"
 }
 
 variable "acme_api_endpoint" {
@@ -16,6 +18,7 @@ variable "acme_api_endpoint" {
 variable "domain" {
   type        = string
   description = "Domain for this certificate e.g. apps.cluster.example.com"
+  default     = "api.ocp-ipi-tf-test.clusters.azure.ibm-software-everywhere.dev"
 }
 
 variable "wildcard_domain" {
