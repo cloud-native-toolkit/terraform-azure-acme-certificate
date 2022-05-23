@@ -1,9 +1,52 @@
 name: azure-acme-certificate
 type: terraform
-description: Module to provision acme-certificate on azure
+description: Module to provision an ACME certificate for azure
 tags:
-  - tools
-  - devops
-versions: []
+  - azure
+  - certificate
+  - tls
+versions:
+  - platforms: []
+    providers:
+      - name: acme
+        source: vancluever/acme
+    dependencies: []
+    variables:
+      - name: resource_group_name
+        type: string
+        description: Resource Group where the public DNS zone is deployed
+      - name: acme_registration_email
+        type: string
+        description: Email address used to register with letsencrypt
+      - name: acme_api_endpoint
+        default: '"https://acme-v02.api.letsencrypt.org/directory"'
+        description: ACME API endpoint, defaults to letsencrypt prod directory.
+      - name: domain
+        type: string
+        description: Domain for this certificate e.g. apps.cluster.example.com
+      - name: wildcard_domain
+        type: bool
+        description: >-
+          Specify wether wildcard subdomain should be supported e.g.
+          *.apps.cluster.example.com
+        default: false
+      - name: subscription_id
+        type: string
+        description: Azure Subscription ID
+      - name: tenant_id
+        type: string
+        description: Azure Tenant ID
+      - name: client_id
+        type: string
+        description: Azure Client ID
+      - name: client_secret
+        type: string
+        description: Azure Client Secret
+    version: v1.0.0
+    outputs:
+      - name: cert
+      - name: key
+        sensitive: true
+      - name: issuer_ca
 cloudProvider: azure
 id: github.com/cloud-native-toolkit/terraform-azure-acme-certificate
