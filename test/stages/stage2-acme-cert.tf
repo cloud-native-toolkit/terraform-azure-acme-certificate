@@ -1,5 +1,5 @@
 module "acme-cert-api" {
-  source = "../../terraform-azure-acme-certificate"
+  source = "./module"
 
   domain = "api.ocp-ipi-tf-test.clusters.azure.ibm-software-everywhere.dev"
   acme_registration_email = "noe.samaille@ibm.com"
