@@ -1,9 +1,3 @@
-variable "resource_group_name" {
-  type        = string
-  description = "Resource Group where the public DNS zone is deployed"
-  default     = "ocp-ipi-rg"
-}
-
 variable "acme_registration_email" {
   type        = string
   description = "Email address used to register with letsencrypt"
